@@ -2,9 +2,9 @@
 
 #Install Ansible
 if [ dpkg -s ansible &> /dev/null -eq 0 ]; then
-    echo "Package ansible is installed!"
+    echo -e "\033[1;32m Package ansible is installed! \033[m"
 else
-    echo "Package ansible is NOT installed!"
+    echo -e "\033[31m Package ansible is NOT installed! \033[m"
     sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
     sudo apt update
     sudo apt -y install ansible
@@ -13,9 +13,9 @@ fi
 
 #Install Terraform
 if [ dpkg -s terraform &> /dev/null -eq 0 ]; then
-    echo "Package terraform is installed!"
+    echo -e "\033[1;32m Package terraform is installed! \033[m"
 else
-    echo "Package terraform is NOT installed!"
+    echo -e "\033[31m Package terraform is NOT installed! \033[m"
     sudo apt-get update && sudo apt-get install -y gnupg software-properties-common
     wget -O- https://apt.releases.hashicorp.com/gpg | \
     gpg --dearmor | \
@@ -35,11 +35,14 @@ fi
 
 #Qualité de vie
 if [ dpkg -s htop &> /dev/null -eq 0 ]; then
-    echo "Package htop is installed!"
+    echo -e "\033[1;32m Package htop is installed! \033[m"
 else
-    echo "Package htop is NOT installed!"
+    echo -e "\033[31m Package htop is NOT installed! \033[m"
     apt-get -y install htop
 fi
+
+
+
 
 #Update
 sudo apt update
