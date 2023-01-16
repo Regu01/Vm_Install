@@ -3,7 +3,7 @@
 #Install Ansible
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
 sudo apt update
-sudo apt install ansible
+sudo apt -y install ansible
 ansible --version
 
 #Install Terraform
@@ -18,7 +18,7 @@ echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] \
     https://apt.releases.hashicorp.com $(lsb_release -cs) main" | \
     sudo tee /etc/apt/sources.list.d/hashicorp.list
 sudo apt update
-sudo apt-get install terraform
+sudo apt-get -y install terraform
 touch ~/.bashrc
 terraform -install-autocomplete
 terraform -version
