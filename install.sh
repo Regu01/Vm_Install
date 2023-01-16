@@ -1,7 +1,8 @@
 #!/bin/bash
 
 #Install Ansible
-if [ dpkg -s ansible &> /dev/null -eq 0 ]; then
+if dpkg -s ansible | grep -q Status; 
+then
     echo -e "\033[1;32m Package ansible is installed! \033[m"
 else
     echo -e "\033[31m Package ansible is NOT installed! \033[m"
@@ -12,7 +13,8 @@ else
 fi
 
 #Install Terraform
-if [ dpkg -s terraform &> /dev/null -eq 0 ]; then
+if dpkg -s terraform | grep -q Status; 
+then
     echo -e "\033[1;32m Package terraform is installed! \033[m"
 else
     echo -e "\033[31m Package terraform is NOT installed! \033[m"
@@ -34,7 +36,8 @@ else
 fi
 
 #Qualité de vie
-if [ dpkg -s htop &> /dev/null -eq 0 ]; then
+if dpkg -s htop | grep -q Status;
+then
     echo -e "\033[1;32m Package htop is installed! \033[m"
 else
     echo -e "\033[31m Package htop is NOT installed! \033[m"
