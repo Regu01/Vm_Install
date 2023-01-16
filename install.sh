@@ -24,4 +24,4 @@ terraform -install-autocomplete
 terraform -version
 
 #Qualité de vie
-apt-get install htop
+apt-get -y install htop
