@@ -45,9 +45,17 @@ else
 fi
 
 
+if dpkg -s locate | grep -q Status;
+then
+    echo -e "\033[1;32m Package locate is installed! \033[m"
+else
+    echo -e "\033[31m Package locate is NOT installed! \033[m"
+    apt-get -y install locate
+fi
+
 
 
 #Update
 sudo apt update
-
+echo -e "\033[1;32m Package is update! \033[m"
 
