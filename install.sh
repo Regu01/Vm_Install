@@ -55,7 +55,13 @@ else
     updatedb
 fi
 
-
+if dpkg -s tree | grep -q Status;
+then
+    echo -e "\033[1;32m Package tree is installed! \033[m"
+else
+    echo -e "\033[31m Package tree is NOT installed! \033[m"
+    apt-get -y install tree
+fi
 
 #Update
 sudo apt update
