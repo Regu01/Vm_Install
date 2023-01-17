@@ -51,6 +51,8 @@ then
 else
     echo -e "\033[31m Package locate is NOT installed! \033[m"
     apt-get -y install locate
+    apt-get -y install mlocate
+    updatedb
 fi
 
 
