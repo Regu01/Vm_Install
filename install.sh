@@ -63,6 +63,14 @@ else
     apt-get -y install tree
 fi
 
+if dpkg -s telnet | grep -q Status;
+then
+    echo -e "\033[1;32m Package telnet is installed! \033[m"
+else
+    echo -e "\033[31m Package telnet is NOT installed! \033[m"
+    apt-get -y install telnet
+fi
+
 #Update
 sudo apt update
 echo -e "\033[1;32m Package is update! \033[m"
